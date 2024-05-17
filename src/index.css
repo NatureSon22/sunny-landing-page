@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer components {
+    .shadow-md {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .mobile-nav::before {
+        content: "";
+        width: 1.5em;
+        height: 2em;
+        background-color: white;
+        position: absolute;
+        top: -2em;
+        right: 0;
+        clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    }
+
+    .border-overlay::before {
+        content: '';
+        width: 8.5em;
+        height: 0.6em;
+        position: absolute;
+        bottom: -0.1em;
+        border-radius: 1em;
+        left: 50%;
+        opacity: 0.5;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    .yellow::before {
+        @apply bg-yellow;
+    }
+
+    .red::before {
+        @apply bg-soft-red;
+    }
+}
